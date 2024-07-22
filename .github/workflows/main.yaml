@@ -6,6 +6,7 @@ on:
       - main
     paths-ignore:
       - 'k8s/**'
+      - 'helm/**'
       - 'README.md'
 
 jobs:
@@ -82,7 +83,7 @@ jobs:
 
     - name: Update tag in deployment file
       run: |
-        sed -i 's/tag: .*/tag: "${{github.run_id}}"/' k8s-manifests/deployment.yaml
+        sed -i "s/tag: .*/tag: ${github.run_number}/" helm/go-web-app-chart/values.yaml
 
     - name: Commit and push changes
       run: |
