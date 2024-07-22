@@ -89,6 +89,6 @@ jobs:
       run: |
         git config --global user.email "shivaponnaganti5@gmail.com"
         git config --global user.name "shiva-ponnaganti"
-        git add k8s-manifests/deployment.yaml
+        git add helm/go-web-app-chart/Chart.yaml
         git commit -m "Update tag in deployment"
         git push
